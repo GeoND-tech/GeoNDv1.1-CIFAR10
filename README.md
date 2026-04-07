@@ -36,7 +36,9 @@ python main.py --model dla
 ```
 
 - ### dla_paraboloidout
-A DLA model with a layer of paraboloid neurons as the output layer. In terms of code, first we import the Library:
+A DLA model with a layer of paraboloid neurons as the output layer. After the Version 1.1 update which fixed some issues, it is possible to use paraboloid layers as output layers. However, the fixes also cause such models to always overfit, see the Evaluation section for details.
+
+In terms of code, first we import the Library:
 ```
 try:
     import geondpt as gpt
@@ -73,7 +75,9 @@ python main.py --model dla_paraboloidout --momentum 0.0 --nesterov False
 
 
 - ### DLA_paraconv_quarter
-A DLA model with the first convolutional layer replaced with a paraboloid convolutional layer with 4 units instead of the original 16. In terms of code, again, we first import the Library:
+A DLA model with the first convolutional layer replaced with a paraboloid convolutional layer with 4 units instead of the original 16. We do this to avoid overfitting and also reduce the size and execution time of the model. This model can achieve better performance with almost the same speed, especially when using the faster licensed version of the library. See the Evaluation section for details.
+
+In terms of code, again, we first import the Library:
 ```
 try:
     import geondpt as gpt
@@ -108,7 +112,7 @@ Run:
 python main.py --model dla_paraconv_quarter
 ```
 
-## Training Loss and Accuracy of pretrained models
+## Evaluation of pretrained models
 |   Model           | Training Loss        | Accuracy |
 | ----------------- | -------------        | -------- |
 | **dla** - baseline       | 0.001191       | 95.85% |

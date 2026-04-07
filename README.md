@@ -1,6 +1,6 @@
 # Using paraboloid neurons to train DLA models on CIFAR10 with PyTorch
 
-Paraboloid neuron demonstration of the [GeoND Library](https://geond.tech) for [PyTorch](http://pytorch.org/) on the CIFAR10 dataset. This repository uses Version 1.1 of the GeoND Library. Adapted from [https://github.com/kuangliu/pytorch-cifar](https://github.com/kuangliu/pytorch-cifar).
+Paraboloid neuron demonstration of the [GeoND Library](https://geond.tech) for [PyTorch](http://pytorch.org/) on the CIFAR10 dataset. If you are interested in trying out the library on your own datasets, please refer to the ["How to use"](https://geond.tech/geond-docs/) section of the documentation. This repository uses Version 1.1 of the GeoND Library. Adapted from [https://github.com/kuangliu/pytorch-cifar](https://github.com/kuangliu/pytorch-cifar).
 
 ## Requirements
 - Linux only.
@@ -123,5 +123,5 @@ Note that, due to numerical issues and data augmentation, the results may not al
 
 ## References
 - Original repository: [https://github.com/kuangliu/pytorch-cifar](https://github.com/kuangliu/pytorch-cifar)
-- GeoND Library: [https://geond.tech/download/](https://geond.tech/download/)
+- GeoND Library documentation: [https://geond.tech/geond-docs/](https://geond.tech/geond-docs/)
 - Paraboloid Neurons: [https://geond.tech/wp-content/uploads/2024/06/NPDBINNCP.pdf](https://geond.tech/wp-content/uploads/2024/06/NPDBINNCP.pdf)

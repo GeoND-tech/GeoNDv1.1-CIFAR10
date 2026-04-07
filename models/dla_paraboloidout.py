@@ -111,7 +111,8 @@ class DLA_paraboloidout(nn.Module):
         self.layer4 = Tree(block,  64, 128, level=2, stride=2)
         self.layer5 = Tree(block, 128, 256, level=2, stride=2)
         self.layer6 = Tree(block, 256, 512, level=1, stride=2)
-        self.paraboloid = gpt.Paraboloid(512, num_classes, h_factor = 0.01, lr_factor = 1., wd_factor = 0.1, grad_factor = 1., input_factor = 0.4, output_factor = 0.1, init='spotlight')
+        #self.linear = nn.Linear(512, num_classes)
+        self.paraboloid = gpt.ParaboloidOutput(512, num_classes, h_factor = 0.01, lr_factor = 1., wd_factor = 0.1, grad_factor = 1., input_factor = 0.4, output_factor = 0.1, init='spotlight')
 
     def forward(self, x):
         out = self.base(x)

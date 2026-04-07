@@ -14,9 +14,27 @@ pip install -r requirements.txt
 wget -i models.txt -P checkpoint
 ```
 
+## IMPORTANT
+Including any layer with paraboloid neurons requires a specialized optimizer:
+```
+optimizer = gpt.GeoNDSGD(net.parameters(), lr=args.lr,
+                      momentum=args.momentum, weight_decay=args.wd, nesterov = args.nesterov)
+```
+
 ## Models
 ### dla
 Our baseline Deep Layer Aggregation model.
+#### Evaluation
+Download the pretrained model and run:
+```
+python main.py --model dla --eval dla.pth
+```
+#### Training from scratch
+Run:
+```
+python main.py --model dla
+```
+
 ### dla_paraboloidout
 A DLA model with a layer of paraboloid neurons as the output layer. In terms of code, first we import the Library:
 ```
@@ -41,6 +59,18 @@ out = out.view(out.size(0), -1)
 out = self.paraboloid(out)
 #out = self.linear(out)
 ```
+
+#### Evaluation
+Download the pretrained model and run:
+```
+python main.py --model dla_paraboloidout --eval dla_paraboloidout.pth
+```
+#### Training from scratch
+Note that models with a paraboloid output layer (or a paraboloid layer before a linear output layer) seem to perform better without momentum. To train the model without momentum, run:
+```
+python main.py --model dla --momentum 0.0 --nesterov False
+```
+
 
 ### DLA_paraconv_quarter
 A DLA model with the first convolutional layer replaced with a paraboloid convolutional layer with 4 units instead of the original 16. In terms of code, again, we first import the Library:
@@ -67,29 +97,15 @@ self.layer1 = nn.Sequential(
 
 In this case, we do not need to update the forward function, as we replaced an existing layer.
 
-
-## IMPORTANT
-Including a layer with paraboloid neurons requires a specialized optimizer:
+#### Evaluation
+Download the pretrained model and run:
 ```
-optimizer = gpt.GeoNDSGD(net.parameters(), lr=args.lr,
-                      momentum=args.momentum, weight_decay=args.wd, nesterov = args.nesterov)
-```
-
-## Evaluation and Training
-
-### Evaluate the models by running: 
-```
-python main.py --model dla --eval dla.pth
-python main.py --model dla_paraboloidout --eval dla_paraboloidout.pth
 python main.py --model dla_paraconv_quarter --eval dla_paraconv_quarter.pth
 ```
-### Train a model from scratch by ommitting the --eval argument, e.g.:
+#### Training from scratch
+Run:
 ```
-python main.py --model dla_paraconv_half
-```
-### You can resume the training with:
-```
-python main.py --model dla_paraconv_half --resume
+python main.py --model dla_paraconv_quarter
 ```
 
 ## Training Loss and Accuracy of pretrained models

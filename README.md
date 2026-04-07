@@ -22,7 +22,7 @@ optimizer = gpt.GeoNDSGD(net.parameters(), lr=args.lr,
 ```
 
 ## Models
-### dla
+- ### dla
 Our baseline Deep Layer Aggregation model.
 #### Evaluation
 Download the pretrained model and run:
@@ -35,7 +35,7 @@ Run:
 python main.py --model dla
 ```
 
-### dla_paraboloidout
+- ### dla_paraboloidout
 A DLA model with a layer of paraboloid neurons as the output layer. In terms of code, first we import the Library:
 ```
 try:
@@ -72,7 +72,7 @@ python main.py --model dla --momentum 0.0 --nesterov False
 ```
 
 
-### DLA_paraconv_quarter
+- ### DLA_paraconv_quarter
 A DLA model with the first convolutional layer replaced with a paraboloid convolutional layer with 4 units instead of the original 16. In terms of code, again, we first import the Library:
 ```
 try:

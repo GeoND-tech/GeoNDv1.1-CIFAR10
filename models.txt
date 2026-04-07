@@ -1,4 +1,4 @@
 geond.tech/models/v1.1/CIFAR10/dla.pth
-geond.tech/models/v1.1/CIFAR10/dla_paraboloidOUT.pth
+geond.tech/models/v1.1/CIFAR10/dla_paraboloidout.pth
 geond.tech/models/v1.1/CIFAR10/dla_paraconv_quarter.pth
 

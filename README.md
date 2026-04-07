@@ -49,7 +49,7 @@ Then we replace the existing output layer:
 #self.linear = nn.Linear(512, num_classes)
 self.paraboloid = gpt.ParaboloidOutput(512, num_classes, h_factor = 0.01, lr_factor = 1., wd_factor = 0.1, grad_factor = 1., input_factor = 0.4, output_factor = 0.1, init='spotlight')
 ```
-Note that ```ParaboloidOutput``` is the same as ```Paraboloid```, but using a base configuration more appropriate for output layers. We use a slightly different configuration here.
+Note that ```ParaboloidOutput``` is the same as ```Paraboloid```, it just uses a base configuration more appropriate for output layers. We use a slightly different configuration here.
 
 Remember to update the forward function:
 ```

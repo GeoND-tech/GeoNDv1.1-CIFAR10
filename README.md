@@ -115,9 +115,9 @@ python main.py --model dla_paraconv_quarter
 ## Evaluation of pretrained models
 |   Model           | Training Loss        | Accuracy |
 | ----------------- | -------------        | -------- |
-| **dla** - baseline       | 0.001191       | 95.85% |
-| **dla_paraboloidout**        | **0.000149**       | 94.56% |
-| **dla_paraconv_quarter**  | 0.001079       | **96.05%** |
+| ```dla``` - baseline       | 0.001191       | 95.85% |
+| ```dla_paraboloidout```        | **0.000149**       | 94.56% |
+| ```dla_paraconv_quarter```  | 0.001079       | **96.05%** |
 
 Note that, due to numerical issues and data augmentation, the results may not always line up exactly.
 

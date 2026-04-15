@@ -70,7 +70,7 @@ python main.py --model dla_paraboloidout --eval dla_paraboloidout.pth
 #### Training from scratch
 Note that models with a paraboloid output layer (or a paraboloid layer before a linear output layer) seem to perform better without momentum. To train the model without momentum, run:
 ```
-python main.py --model dla_paraboloidout --momentum 0.0 --nesterov False
+python main.py --model dla_paraboloidout --momentum 0.0 --nesterov
 ```
 
 

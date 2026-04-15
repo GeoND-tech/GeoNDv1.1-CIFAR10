@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
 parser.add_argument('--momentum', default=0.9, type=float, help='momentum')
 parser.add_argument('--wd', default=5e-4, type=float, help='momentum')
-parser.add_argument('--nesterov', type=bool, default=True, help='nesterov momentum')
+parser.add_argument('--nesterov', type=bool, action='store_false', default=True, help='nesterov momentum')
 parser.add_argument('--eval', type=str, help='filename to evaluate')
 parser.add_argument('--model', type=str, required=True, help='dla')
 parser.add_argument('--resume', '-r', action='store_true',

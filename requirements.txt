@@ -1,4 +1,3 @@
 torch==2.9.0
 torchvision==0.24.0
-geondptfree==2.9.0.1.1rc5
-
+geondptfree==2.9.0.1.1
